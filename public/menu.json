@@ -1,0 +1,44 @@
+[
+    {
+        "_id":1,
+        "name":"Innovation",
+        "description":"This event will make you think out of the box,Technical challenges may inspire new ideas when approached with a broader prespective",
+        "image" : "images/robo.jpg",
+        "category" : "text"
+    },
+    {
+        "_id":2,
+        "name":"InterDisciplinary Skills",
+        "description":"Exposure to diverse events fosters a well-rounded skill set, combining technical expertise with cultural awareness and sportmanship",
+        "image" : "images/robo.jpg",
+        "category" : "text"
+    },
+    {
+        "_id":3,
+        "name":"Adaptibility",
+        "description":"Involvement in technical, cultural and sports activities hones adaptibility by navigating different challenges and scenarios",
+        "image" : "images/robo.jpg",
+        "category" : "text"
+    },
+    {
+        "_id":4,
+        "name":"Leadership",
+        "description":"Organising or participating in various events provides opportunities to develop leadership skills, whether leading a technical team, coordinating cultural activities or managing sports competitions",
+        "image" : "images/robo.jpg",
+        "category" : "text"
+    },
+    {
+        "_id":5,
+        "name":"Networking",
+        "description":"Meeting people from different fields can create valuable connections, opening up possibilities for future collaborations and career opportunities",
+        "image" : "images/robo.jpg",
+        "category" : "text"
+    },
+    {
+        "_id":6,
+        "name":"Wellness",
+        "description":"The inclusion of sports events promotes physical well-being, offering a balance to the mental challenges presented by technical and cultural activities",
+        "image" : "images/robo.jpg",
+        "category" : "text"
+    }
+]
