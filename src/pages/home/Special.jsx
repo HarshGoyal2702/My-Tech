@@ -33,7 +33,7 @@ const Special = () => {
     fetch("/menu.json")
       .then((res) => res.json())
       .then((data) => {
-        const specials = data.filter((item)=> item.category === "text");
+        const specials = data.filter((item)=> item.category === "popular");
         setHighlight(specials);
       });
   });
@@ -75,7 +75,7 @@ const Special = () => {
     preArrow :<simplePreArrow/>
   };
   return (
-    <div className="section-container my-20 relative">
+    <div className="section-container my-20 relative ">
       <div className="text-left">
         <p className="subtitle">Spectacular</p>
         <h2 className="title">Event Headlines</h2>
@@ -89,7 +89,7 @@ const Special = () => {
         </button>
       </div>
 
-      <Slider ref={slider} {...settings} className="overflow-hidden mt-10 space-5">
+      <Slider ref={slider} {...settings} className="overflow-hidden mt-10 space-x-5">
         {
             highlight.map((item,i) => (
                 <Cards key={i} item={item}/>
