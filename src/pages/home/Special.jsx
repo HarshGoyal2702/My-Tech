@@ -33,7 +33,7 @@ const Special = () => {
     fetch("/menu.json")
       .then((res) => res.json())
       .then((data) => {
-        const specials = data.filter((item)=> item.category === "popular");
+        const specials = data.filter((item)=> item.category === "Impact");
         setHighlight(specials);
       });
   });

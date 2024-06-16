@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { FaRegUser } from "react-icons/fa";
 import Modal from "../components/Modal";
 import { AuthContext } from "../contexts/AuthProvider";
+import Profile from "./Profile";
 
 const Navbar = () => {
   const user = useContext(AuthContext);
@@ -153,10 +154,12 @@ const Navbar = () => {
             </svg>
             {/* this is the Register Button */}
           </button>
-          <button className="btn bg-green rounded-full px-6 text-white flex items-center gap-2" onClick={()=>document.getElementById('my_modal_5').showModal()}>
+        {
+          user? <Profile user={user}/> :  <button className="btn bg-green rounded-full px-6 text-white flex items-center gap-2" onClick={()=>document.getElementById('my_modal_5').showModal()}>
             <FaRegUser />
             Register
           </button>
+        }
           <Modal />
         </div>
       </div>

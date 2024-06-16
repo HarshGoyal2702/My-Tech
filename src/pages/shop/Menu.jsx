@@ -15,11 +15,11 @@ const Menu = () => {
     // fetch data from the backend
     const fetchData = async () => {
       try {
-        const response = await fetch("/menu.json");
+        const response = await fetch("http://localhost:3000/menu");
         const data = await response.json();
         console.log(data);
         setMenu(data);
-        setFilteredItems(data);
+        setFilteredItems(data.filter((item) => item.category !== "Impact"));
       } catch (error) {
         console.log("Error fetching data", error);
       }
@@ -32,7 +32,7 @@ const Menu = () => {
   const filterItems = (category) => {
     const filtered =
       category === "all"
-        ? menu
+        ? menu.filter((item)=> item.category !== "Impact")
         : menu.filter((item) => item.category === category);
 
     setFilteredItems(filtered);
@@ -42,7 +42,7 @@ const Menu = () => {
 
   //show all data
   const showAll = () => {
-    setFilteredItems(menu);
+    setFilteredItems(menu.filter((item) => item.category !== "Impact"));
     setSelectedCategory("all");
     setCurrentPage(1);
   };
