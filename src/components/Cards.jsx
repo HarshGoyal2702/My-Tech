@@ -7,9 +7,11 @@ const Cards = ({ item }) => {
   return (
     <div className="card shadow-xl relative md:my-3 glass mr-5">
       <Link to={`/menu/${item._id}`}>
-      <figure>
+      {
+        item.image ? <figure>
         <img src={item.image} alt="Tagline" className="hover:scale-105 transition-all duration-200 md:h-72"/>
-      </figure>
+      </figure> : <p>Loading...</p>
+      }
       </Link>
       <div className="card-body">
         <h2 className="card-title">{item.name}</h2>
