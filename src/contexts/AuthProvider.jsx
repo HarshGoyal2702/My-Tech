@@ -30,7 +30,7 @@ const AuthProvider = ({children}) => {
     }
 
     // logout 
-    const logOut = () =>{
+    const logout = () =>{
       return signOut(auth);
   }
 
@@ -59,7 +59,7 @@ const AuthProvider = ({children}) => {
         createUser,
         signUpWithGmail,
         login,
-        logOut,
+        logout,
         updateUserProfile,
         loading
     }

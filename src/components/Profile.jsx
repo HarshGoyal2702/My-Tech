@@ -3,8 +3,8 @@ import { AuthContext } from "../contexts/AuthProvider";
 
 const Profile = ({user}) => {
     const {logout} = useContext(AuthContext);
-    const handleLogout = ()=>{
-logout().then(()=>{
+    const handleLogout = async ()=>{
+await logout().then(()=>{
 alert("Logout Successfull")
 }).catch((error)=>{
     alert("Error Occured Try Again to Logout The Account")
@@ -44,7 +44,7 @@ alert("Logout Successfull")
               <a href="/update-profile">Profile</a>
             </li>
             <li>
-              <a>Events</a>
+              <a href="/menu">Events</a>
             </li>
             <li>
               <a onClick={handleLogout}>Logout</a>

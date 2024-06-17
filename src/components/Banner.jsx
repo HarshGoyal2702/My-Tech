@@ -8,8 +8,8 @@ const Banner = () => {
       <div className="md:w-1/2 relative">
           <img className="rounded-full " src="/images/model.jpeg" alt="" />
           <div className="flex flex-col md:flex-row items-center justify-around -mt-28 gap-4 ">
-            <div className="flex absolute top-10 -left-4 bg-white py-2 px-3 rounded-2xl items-center gap-3 shadow-md w-64">
-              <img className="rounded-2xl w-28 " src="/images/cricket.webp" alt="" />
+            <div className="flex absolute top-10 -left-4 bg-white py-2 px-3 rounded-2xl items-center gap-3 shadow-md md:w-64 w-52 h-28">
+              <img className="rounded-2xl md:w-28 w-24 sm:h-20 " src="/images/cricket.webp" alt="" />
               <div className="space-y-1">
                 <h5 className="font-medium mb-1">Cricket</h5>
                 <div className="rating rating-sm">
@@ -51,8 +51,8 @@ const Banner = () => {
                 <p className="text-red">couple cricket</p>
               </div>
             </div>
-            <div className="flex absolute -bottom-24 right-0 bg-white py-2 px-3 rounded-2xl items-center gap-3 shadow-md w-64">
-              <img className="rounded-2xl w-28 " src="/images/cricket.webp" alt="" />
+            <div className="flex absolute -bottom-24 right-0 bg-white py-2 px-3 rounded-2xl items-center gap-3 shadow-md md:w-64 w-52 h-28">
+              <img className="rounded-2xl md:w-28 w-24 h-20" src="/images/cricket.webp" alt="" />
               <div className="space-y-1">
                 <h5 className="font-medium mb-1">Dance</h5>
                 <div className="rating rating-sm">
@@ -97,7 +97,7 @@ const Banner = () => {
           </div>
         </div>
         {/* texts div */}
-        <div className="md:w-1/2 space-y-7 px-4">
+        <div className="md:w-1/2 mt-[4.5rem] space-y-7 px-4">
           <h2 className="md:text-5xl text-4xl font-bold md:leading-snug leading-snug">
             <span className="text-green">Tech Fusion</span> is a community of
             developers, designers and Sporty enthusiasts.

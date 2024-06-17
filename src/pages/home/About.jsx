@@ -38,22 +38,22 @@ const About = () => {
             <div className="avatar-group -space-x-6 rtl:space-x-reverse">
               <div className="avatar">
                 <div className="w-12">
-                  <img src="images/vaish.png" />
+                  <img src="images/contact2.png" />
                 </div>
               </div>
               <div className="avatar">
                 <div className="w-12">
-                  <img src="images/vaish.png"  />
+                  <img src="images/cambg_2.jpg"  />
                 </div>
               </div>
               <div className="avatar">
                 <div className="w-12">
-                  <img src="images/vaish.png"  />
+                  <img src="images/contact.webp"  />
                 </div>
               </div>
               <div className="avatar placeholder">
                 <div className="w-12 bg-neutral text-neutral-content">
-                  <span>+9</span>
+                  <span>+20</span>
                 </div>
               </div>
             </div>

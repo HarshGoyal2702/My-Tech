@@ -112,12 +112,12 @@ const Navbar = () => {
             role="button"
             className="btn btn-ghost btn-circle avatar"
           >
-            <div className="w-12 h-12 object-cover">
+            <div className="md:w-12 md:h-12 w-10 h-10 object-cover">
               <img alt="" src="/images/vaish.png" />
             </div>
           </div>
           {/* this is the Website name */}
-          <a style={{ fontWeight: "bold" }} className="ml-3 text-xl">
+          <a style={{ fontWeight: "bold" }} className="ml-3 w-full text-sm md:text-xl whitespace-nowrap">
             Vaish College of Engineering
           </a>
         </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Cards from "../../components/Cards";
 import { FaFilter } from "react-icons/fa"
+import LoadingSkeleton from "../../components/LoadingSkeleton";
 
 const Menu = () => {
   const [menu, setMenu] = useState([]);
@@ -9,15 +10,18 @@ const Menu = () => {
   const [sortOption, setSortOption] = useState("default");
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(8);
+  const [loading,setLoading] = useState(true)
 
   //loading
   useEffect(() => {
     // fetch data from the backend
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3000/menu");
+        const response = await fetch("https://tech-fusion-server.onrender.com/menu");
         const data = await response.json();
         console.log(data);
+
+        setLoading(false);
         setMenu(data);
         setFilteredItems(data.filter((item) => item.category !== "Impact"));
       } catch (error) {
@@ -80,6 +84,7 @@ const Menu = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
+   <div>
     <div>
       {/* menu banner  */}
       <div className="section-container bg-gradient-to-r from -[#FAFAFA] from-0% to-[#FCFCFC] to-100%">
@@ -152,11 +157,13 @@ const Menu = () => {
           </div>
         </div>
         {/* products card */}
-        <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4">
+      {
+        loading ? <LoadingSkeleton/> : <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4">
           {currentItems.map((item) => (
             <Cards key={item._id} item={item} />
           ))}
         </div>
+      }
       </div>
 
       {/* pagination section */}
@@ -175,6 +182,8 @@ const Menu = () => {
       </div>
 
     </div>
+    
+   </div>
   );
 };
 

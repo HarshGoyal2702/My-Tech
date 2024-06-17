@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Cards from "../../components/Cards";
 import {FaAngleLeft,FaAngleRight} from "react-icons/fa";
+import LoadingSkeleton from "../../components/LoadingSkeleton";
 
 const simpleNextArrow = (props)=>{
     const {className,style,onClick}=props;
@@ -28,13 +29,15 @@ const simplePreArrow =(props) =>{
 const Special = () => {
   const [highlight, setHighlight] = useState([]);
   const slider = React.useRef(null);
+  const [loading,setLoading] = useState(true)
 
   useEffect(() => {
-    fetch("/menu.json")
+    fetch("https://tech-fusion-server.onrender.com/menu")
       .then((res) => res.json())
       .then((data) => {
         const specials = data.filter((item)=> item.category === "Impact");
         setHighlight(specials);
+        setLoading(false);
       });
   });
 
@@ -89,13 +92,15 @@ const Special = () => {
         </button>
       </div>
 
-      <Slider ref={slider} {...settings} className="overflow-hidden mt-10 space-x-5">
+      {
+        loading ? <LoadingSkeleton/> :<Slider ref={slider} {...settings} className="overflow-hidden mt-10 space-x-5">
         {
             highlight.map((item,i) => (
                 <Cards key={i} item={item}/>
             ))
         }
       </Slider>
+      }
     </div>
   );
 };
