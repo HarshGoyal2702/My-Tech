@@ -6,7 +6,7 @@ import Profile from "./Profile";
 
 const Navbar = () => {
   const user = useContext(AuthContext);
-  console.log(user)
+  console.log(user?.user)
 
   const [isSticky, setSticky] = useState(false);
   const [isSearchVisible, setIsSearchVisible] = useState(false);
@@ -155,7 +155,7 @@ const Navbar = () => {
             {/* this is the Register Button */}
           </button>
         {
-          user? <Profile user={user}/> :  <button className="btn bg-green rounded-full px-6 text-white flex items-center gap-2" onClick={()=>document.getElementById('my_modal_5').showModal()}>
+          user?.user? <Profile user={user}/> :  <button className="btn bg-green rounded-full px-6 text-white flex items-center gap-2" onClick={()=>document.getElementById('my_modal_5').showModal()}>
             <FaRegUser />
             Register
           </button>
